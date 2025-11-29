@@ -1,0 +1,434 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f7f9fc;
+    padding: 20px 0;
+}
+
+/* Skip link for keyboard users */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #4a90e2;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1001;
+    font-weight: bold;
+}
+
+.skip-link:focus {
+    top: 6px;
+    outline: 3px solid #000;
+    outline-offset: 2px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    background: #4a90e2;
+    color: white;
+    padding: 30px 20px;
+    border-radius: 12px;
+    margin: 0 auto 30px auto;
+    width: 90%;
+    max-width: 1200px;
+}
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+header .tagline {
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+/* Main content */
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Static Sidebar Navigation */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #1e1e2f;
+    color: white;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+/* Navigation Links */
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+}
+
+.sidebar nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a:focus {
+    background: #4a90e2;
+    outline: 2px solid #fff;
+    outline-offset: -2px;
+}
+
+/* Adjust content margin for sidebar */
+.main-content {
+    margin-left: 200px;
+    transition: margin 0.3s ease;
+}
+
+/* Two-column layout for desktop */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Single column for mobile */
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+    
+    .sidebar nav {
+        padding-top: 20px;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .sidebar nav a {
+        padding: 10px 15px;
+        margin: 5px;
+        border-radius: 4px;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+/* Image Styles */
+.profile-image,
+.project-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 2px solid #e9ecef;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.contact-logo {
+    width: 100%;
+    max-width: 300px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: block;
+    border: 2px solid #4a90e2;
+}
+
+.profile-section,
+.contact-info {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    border-left: 4px solid #4a90e2;
+}
+
+/* Project cards */
+.project-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 4px solid #4a90e2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Subheaders */
+h2 {
+    font-size: 1.8rem;
+    color: #4a90e2;
+    margin-bottom: 15px;
+    margin-top: 25px;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 20px;
+}
+
+/* Links */
+a {
+    color: #4a90e2;
+    text-decoration: none;
+}
+a:hover,
+a:focus {
+    text-decoration: underline;
+    outline: 2px solid #4a90e2;
+    outline-offset: 2px;
+}
+
+/* Focus styles for all interactive elements */
+a:focus,
+button:focus {
+    outline: 3px solid #4a90e2;
+    outline-offset: 2px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #777;
+    font-size: 0.9rem;
+    padding: 20px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .project-card {
+        border: 2px solid #000;
+    }
+    
+    .sidebar nav a:hover,
+    .sidebar nav a:focus {
+        background: #000;
+        color: #fff;
+        outline: 3px solid #fff;
+    }
+    
+    .profile-section,
+    .contact-info {
+        border-left: 4px solid #000;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .project-card {
+        transition: none;
+    }
+    
+    .project-card:hover {
+        transform: none;
+    }
+}
+
+/* Ensure sufficient color contrast */
+.profile-section, .contact-info, .project-card {
+    background: #f8f9fa;
+    color: #333;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        padding: 10px 0;
+    }
+    
+    header {
+        width: 95%;
+        padding: 20px 15px;
+        margin-bottom: 20px;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    main {
+        width: 95%;
+        padding: 20px 15px;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .profile-image,
+    .project-image {
+        height: 180px;
+    }
+    
+    .contact-logo {
+        height: 100px;
+        margin: 0 auto 15px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    header .tagline {
+        font-size: 1rem;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    main {
+        padding: 15px 10px;
+    }
+    
+    .profile-image,
+    .project-image {
+        height: 150px;
+    }
+    
+    .sidebar nav {
+        flex-direction: column;
+    }
+    
+    .sidebar nav a {
+        margin: 2px 0;
+    }
+}
+
+/* Print Styles */
+@media print {
+    * {
+        background: transparent !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+        background: white !important;
+        padding: 0 !important;
+    }
+    
+    .sidebar {
+        display: none !important;
+    }
+    
+    .main-content {
+        margin-left: 0 !important;
+    }
+    
+    header {
+        background: white !important;
+        color: black !important;
+        border: 2px solid black;
+        margin-bottom: 20px;
+    }
+    
+    main {
+        background: white !important;
+        box-shadow: none !important;
+        width: 100% !important;
+        max-width: none !important;
+        padding: 0 !important;
+    }
+    
+    .skip-link {
+        display: none !important;
+    }
+    
+    a {
+        color: black !important;
+        text-decoration: underline;
+    }
+    
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 10pt;
+    }
+    
+    .content-grid {
+        display: block !important;
+    }
+    
+    .project-card {
+        break-inside: avoid;
+        border-left: 2px solid black !important;
+    }
+    
+    .profile-image,
+    .project-image,
+    .contact-logo {
+        display: none;
+    }
+    
+    h2 {
+        color: black !important;
+        break-after: avoid;
+    }
+    
+    footer {
+        margin-top: 20px;
+        border-top: 1px solid black;
+        padding-top: 10px;
+    }
+    
+    /* Avoid breaking elements across pages */
+    section {
+        break-inside: avoid;
+    }
+}
